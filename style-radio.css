@@ -1,47 +1,47 @@
 body {
     background-color: white;
-    font-family: 'Monaco', sans-serif;
-    font-weight: 500;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: 900;
     font-size: 30px;
-    color: silver;
+    color: black;
 }
 
 #wrapper {
     width: 100%;
-    min-width: 100px;
+    min-width: auto;
     max-width: 853px;
-    margin: 0px auto;
-    padding: 1 1 1 1;
-    opacity: 0.9;
+    margin: 10px auto;
+    padding: 5 5 5 5;
+    opacity: 1;
 }
 
 #hr,
 hr {
-    border: none; 
-    background-color: black; 
+    border: none;
+    background-color: black;
     color: violet;
     height: 1px;
    }
 
 
 h1 {
-    font-family: 'Monaco', sans-serif;
-    font-weight: 500;
-    font-size: 30px;
+  font-family: 'Press Start 2P', cursive;
+    font-weight: 900;
+    font-size: 60px;
     color: black;
 }
 
 p {
-    font-family: 'Monaco', sans-serif;
-    font-weight: 500;
+  font-family: 'Press Start 2P', cursive;
+    font-weight: 100;
     font-size: 30px;
     color: black;
 }
 
 a {
-   
+
     text-decoration: none;
-    font-family: 'Monaco', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     font-weight: 500;
     font-size: 30px;
     color: black;
@@ -56,22 +56,20 @@ ol li {
 
 ol li a {
     display: block;
-    padding: 0px 0px 0px 20px;
+    padding: 20px 20px 20px 20px;
 }
 
 li.playing {
-    
-    font-family: 'Monaco', sans-serif;
-    font-weight: 500;
+
+    font-family: 'Press Start 2P', cursive;
+    font-weight: 100;
     font-size: 30px;
     color: black;
 }
 
 li.playing a {
-    font-family: 'Monaco', sans-serif;
-    font-weight: 500;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: 900;
     font-size: 30px;
     color: black;
 }
-
-    
