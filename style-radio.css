@@ -1,18 +1,17 @@
 body {
-    background-color: white;
+    background-color: silver;
     font-family: 'Press Start 2P', cursive;
-    font-weight: 900;
+    font-weight: 100;
     font-size: 30px;
-    color: black;
+    color: green;
 }
 
 #wrapper {
     width: 100%;
     min-width: auto;
-    max-width: 853px;
-    margin: 10px auto;
+    max-width: 100%;
+    margin: 10px;
     padding: 5 5 5 5;
-    opacity: 1;
 }
 
 #hr,
@@ -26,37 +25,37 @@ hr {
 
 h1 {
   font-family: 'Press Start 2P', cursive;
-    font-weight: 900;
-    font-size: 60px;
-    color: black;
+    font-weight: 100;
+    font-size: 30px;
+    color: green;
 }
 
 p {
   font-family: 'Press Start 2P', cursive;
     font-weight: 100;
     font-size: 30px;
-    color: black;
+    color: green;
 }
 
 a {
 
-    text-decoration: none;
+    text-decoration: underline;
     font-family: 'Press Start 2P', cursive;
-    font-weight: 500;
+    font-weight: 100;
     font-size: 30px;
-    color: black;
+    color: green;
 }
 
 ol li {
     position: relative;
-    margin: 1px;
-    padding: 9px 2px 10px;
+    margin: 5px;
+    padding: 5px 5px 5px;
     cursor: pointer;
 }
 
 ol li a {
     display: block;
-    padding: 20px 20px 20px 20px;
+    padding: 5px 5px 5px 5px;
 }
 
 li.playing {
@@ -64,12 +63,12 @@ li.playing {
     font-family: 'Press Start 2P', cursive;
     font-weight: 100;
     font-size: 30px;
-    color: black;
+    color: white;
 }
 
 li.playing a {
     font-family: 'Press Start 2P', cursive;
-    font-weight: 900;
+    font-weight: 100;
     font-size: 30px;
-    color: black;
+    color: white;
 }
