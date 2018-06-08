@@ -1,9 +1,9 @@
 body {
-    background-color: grey;
+    background-color: teal;
     font-family: 'Press Start 2P', cursive;
     font-weight: 100;
     font-size: 30px;
-    color: RoyalBlue;
+    color: aqua;
 }
 
 #wrapper {
@@ -19,14 +19,14 @@ h1 {
   font-family: 'Press Start 2P', cursive;
     font-weight: 100;
     font-size: 30px;
-    color: RoyalBlue;
+    color: aqua;
 }
 
 p {
   font-family: 'Press Start 2P', cursive;
     font-weight: 100;
     font-size: 30px;
-    color: RoyalBlue;
+    color: aqua;
 }
 
 a {
@@ -35,7 +35,7 @@ a {
     font-family: 'Press Start 2P', cursive;
     font-weight: 100;
     font-size: 30px;
-    color: RoyalBlue;
+    color: aqua;
 }
 
 ol li {
@@ -55,7 +55,7 @@ li.playing {
     font-family: 'Press Start 2P', cursive;
     font-weight: 100;
     font-size: 30px;
-    color: RoyalBlue;
+    color: aqua;
     text-decoration: underline;
     text-decoration: blink;
 }
@@ -64,7 +64,7 @@ li.playing a {
     font-family: 'Press Start 2P', cursive;
     font-weight: 100;
     font-size: 30px;
-    color: RoyalBlue;
+    color: aqua;
     text-decoration: underline;
     text-decoration: blink;
 }
