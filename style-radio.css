@@ -57,7 +57,6 @@ li.playing {
     font-size: 30px;
     color: aqua;
     text-decoration: underline;
-    text-decoration: blink;
 }
 
 li.playing a {
@@ -66,5 +65,4 @@ li.playing a {
     font-size: 30px;
     color: aqua;
     text-decoration: underline;
-    text-decoration: blink;
 }
