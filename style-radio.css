@@ -1,9 +1,9 @@
 body {
-    background-color: silver;
+    background-color: grey;
     font-family: 'Press Start 2P', cursive;
     font-weight: 100;
     font-size: 30px;
-    color: green;
+    color: RoyalBlue;
 }
 
 #wrapper {
@@ -19,14 +19,14 @@ h1 {
   font-family: 'Press Start 2P', cursive;
     font-weight: 100;
     font-size: 30px;
-    color: green;
+    color: RoyalBlue;
 }
 
 p {
   font-family: 'Press Start 2P', cursive;
     font-weight: 100;
     font-size: 30px;
-    color: green;
+    color: RoyalBlue;
 }
 
 a {
@@ -35,19 +35,19 @@ a {
     font-family: 'Press Start 2P', cursive;
     font-weight: 100;
     font-size: 30px;
-    color: green;
+    color: RoyalBlue;
 }
 
 ol li {
     position: relative;
     margin: 5px;
-    padding: 5px 5px 5px;
+    padding: 10px 10px 10px;
     cursor: copy;
 }
 
 ol li a {
     display: block;
-    padding: 5px 5px 5px 5px;
+    padding: 10px 10px 10px 10px;
 }
 
 li.playing {
@@ -55,12 +55,16 @@ li.playing {
     font-family: 'Press Start 2P', cursive;
     font-weight: 100;
     font-size: 30px;
-    color: white;
+    color: RoyalBlue;
+    text-decoration: underline;
+    text-decoration: blink;
 }
 
 li.playing a {
     font-family: 'Press Start 2P', cursive;
     font-weight: 100;
     font-size: 30px;
-    color: white;
+    color: RoyalBlue;
+    text-decoration: underline;
+    text-decoration: blink;
 }
