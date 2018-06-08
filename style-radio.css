@@ -43,11 +43,13 @@ ol li {
     margin: 5px;
     padding: 10px 10px 10px;
     cursor: copy;
+    list-style-type: none;
 }
 
 ol li a {
     display: block;
     padding: 10px 10px 10px 10px;
+    list-style-type: none;
 }
 
 li.playing {
@@ -57,6 +59,7 @@ li.playing {
     font-size: 30px;
     color: aqua;
     text-decoration: underline;
+    list-style-type: none;
 }
 
 li.playing a {
@@ -65,4 +68,5 @@ li.playing a {
     font-size: 30px;
     color: aqua;
     text-decoration: underline;
+    list-style-type: none;
 }
