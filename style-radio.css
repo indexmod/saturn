@@ -22,8 +22,9 @@ h1 {
 }
 
 p {
-    font-weight: 100;
-    font-size: 25px;
+    font-weight: 900;
+    font-size: 15px;
+    color: green
 }
 
 a {
@@ -53,6 +54,6 @@ li.playing a {
 }
 
 img {
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
+	-webkit-filter: grayscale(50%);
+	filter: grayscale(50%);
 }
