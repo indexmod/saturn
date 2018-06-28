@@ -5,6 +5,7 @@ body {
     font-size: 25px;
     line-height: 1.3em;
     color: #61afef;
+    list-style-type: none;
 }
 
 #wrapper {
