@@ -23,8 +23,8 @@ h1 {
 
 p {
     font-weight: 900;
-    font-size: 15px;
-    color: green
+    font-size: 25px;
+    color: lime
 }
 
 a {
@@ -52,6 +52,31 @@ li.playing {
 li.playing a {
     text-decoration: underline;
     list-style-type: none;
+}
+
+a:link {
+	color: silver;
+	text-decoration: none;
+  font-weight: 900;
+  font-size: 25px;
+}
+a:visited {
+  color: silver;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 25px;
+}
+a:hover {
+  color: silver;
+	text-decoration: underline;
+  font-weight: 900;
+  font-size: 25px;
+}
+a:active {
+  color: silver;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 25px;
 }
 
 img {
