@@ -25,10 +25,12 @@ p {
     font-weight: 900;
     font-size: 25px;
     color: lime
+    list-style-type: none;
 }
 
 a {
     text-decoration: none;
+    list-style-type: none;
 }
 
 ol li a {
@@ -48,24 +50,28 @@ li.playing a {
 }
 
 a:link {
+  list-style-type: none;
 	color: #61afef;
 	text-decoration: none;
   font-weight: 900;
   font-size: 25px;
 }
 a:visited {
+  list-style-type: none;
   color: #61afef;
   text-decoration: none;
   font-weight: 900;
   font-size: 25px;
 }
 a:hover {
+  list-style-type: none;
   color: #61afef;
 	text-decoration: underline;
   font-weight: 900;
   font-size: 25px;
 }
 a:active {
+  list-style-type: none;
   color: #61afef;
   text-decoration: none;
   font-weight: 900;
