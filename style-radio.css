@@ -8,9 +8,9 @@ body {
 }
 
 #wrapper {
-    width: 90%;
+    width: 70%;
     min-width: auto;
-    max-width: 90%;
+    max-width: 70%;
     margin: 10px 10px 10px 10px;
     padding: 10px 10px 10px 10px;
 }
@@ -31,13 +31,6 @@ a {
     text-decoration: none;
 }
 
-ol li {
-    position: relative;
-    margin: 10px 10px 10px 10px;
-    padding: 10px 10px 10px 10px;
-    list-style-type: none;
-}
-
 ol li a {
     display: block;
     margin: 10px 10px 10px 10px;
@@ -55,31 +48,31 @@ li.playing a {
 }
 
 a:link {
-	color: silver;
+	color: #61afef;
 	text-decoration: none;
   font-weight: 900;
   font-size: 25px;
 }
 a:visited {
-  color: silver;
+  color: #61afef;
   text-decoration: none;
   font-weight: 900;
   font-size: 25px;
 }
 a:hover {
-  color: silver;
+  color: #61afef;
 	text-decoration: underline;
   font-weight: 900;
   font-size: 25px;
 }
 a:active {
-  color: silver;
+  color: #61afef;
   text-decoration: none;
   font-weight: 900;
   font-size: 25px;
 }
 
 img {
-	-webkit-filter: grayscale(50%);
-	filter: grayscale(50%);
+	-webkit-filter: grayscale(10%);
+	filter: grayscale(10%);
 }
