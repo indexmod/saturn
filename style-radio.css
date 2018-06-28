@@ -1,5 +1,5 @@
 body {
-    background-color: #768296;
+    background-color: #6d80a0;
     font-family:  'Press Start 2P', cursive;
     font-size: 30px;
     color: #2c313c;
@@ -67,17 +67,19 @@ li.playing {
     line-height: 2em;
     font-weight: 500;
     font-size: 30px;
-    color: black;
+    color: silver;
     list-style-type: none;
+    text-decoration: underline;
 
 }
 
 li.playing a {
+    text-decoration: underline;
     font-family: 'Press Start 2P', cursive;
     line-height: 2em;
     font-weight: 500;
     font-size: 30px;
-    color: black;
+    color: silver;
     list-style-type: none;
 
 }
