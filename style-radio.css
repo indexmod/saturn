@@ -64,18 +64,17 @@ li.playing {
     font-family: 'Press Start 2P', cursive;
     line-height: 2em;
     font-size: 20px;
-    color: red;
+    color: lime;
     list-style-type: none;
     text-decoration: underline;
 
 }
 
 li.playing a {
-    text-decoration: underline;
     font-family: 'Press Start 2P', cursive;
     line-height: 2em;
     font-size: 20px;
-    color: red;
+    color: lime;
     list-style-type: none;
 
 }
