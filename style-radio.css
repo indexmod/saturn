@@ -1,6 +1,6 @@
 body {
     background-color: white;
-    font-family:  'Arial', cursive;
+    font-family:  'Helvetica Neue', cursive;
     font-size: 15px;
     font-weight: 900;
     color: green;
@@ -46,14 +46,14 @@ ol li a {
 
 li.playing {
     line-height: 2em;
-    color: yellow;
+    color: gold;
     list-style-type: none;
     text-decoration: underline;
 
 }
 
 li.playing a {
-    color: yellow;
+    color: gold;
     list-style-type: none;
     text-decoration: underline;
 }
