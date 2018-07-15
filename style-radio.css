@@ -1,6 +1,6 @@
 body {
     background-color: white;
-    font-family:  'Press Start 2P', cursive;
+    font-family:  'Arial', cursive;
     font-size: 15px;
     color: green;
 }
@@ -16,26 +16,10 @@ body {
 }
 
 
-h1 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: inherit;
-    color: green;
-    line-height: 2em;
-}
-
-p {
-    font-family: 'Press Start 2P', cursive;
-    font-size: inherit;
-    color: green;
-    line-height: 2em;
-}
-
 a {
 
     text-decoration: none;
     line-height: 2em;
-    font-family: 'Press Start 2P', cursive;
-    font-size: inherit;
     color: green;
     list-style-type: none;
 
@@ -60,21 +44,9 @@ ol li a {
 }
 
 li.playing {
-
-    font-family: 'Press Start 2P', cursive;
     line-height: 2em;
-    font-size: inherit;
-    color: lime;
+    color: yellow;
     list-style-type: none;
     text-decoration: underline;
-
-}
-
-li.playing a {
-    font-family: 'Press Start 2P', cursive;
-    line-height: 2em;
-    font-size: inherit;
-    color: lime;
-    list-style-type: none;
 
 }
