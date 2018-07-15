@@ -1,305 +1,396 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-	<meta charset="utf-8">
-	<title>Сатурн-радио</title>
-	<meta content="width=device-width, initial-scale=0.9" name="viewport">
-	<meta country="RU">
-	<link href="/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
-	<link href="/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
-	<link href="/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
-	<link href="/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
-	<link href="/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
-	<link href="/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
-	<link href="/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
-	<link href="/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
-	<link href="/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
-	<link href="/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png">
-	<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
-	<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
-	<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
-	<link href="/manifest.json" rel="manifest">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Сатурн-радио
+    </title>
+    <meta content="width=device-width, initial-scale=0.9" name="viewport">
+    <meta>
+    <link href="/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+    <link href="/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
+    <link href="/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+    <link href="/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+    <link href="/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+    <link href="/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+    <link href="/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png">
+    <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+    <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="/manifest.json" rel="manifest">
+    <style>
+                   @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+    </style>
+    <link href="style-radio.css" rel="stylesheet" type="text/css"><!-- Yandex.Metrika counter -->
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120911953-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script src="/audio/jquery.js">
+    </script>
+    <script src="/audiojs/audio.js">
+    </script>
+    <script>
+                       $(function() {
+                           // Setup the player to autoplay the next track
+                           var a = audiojs.createAll({
+                               trackEnded: function() {
+                                   var next = $('ol li.playing').next();
+                                   if (!next.length) next = $('ol li').first();
+                                   next.addClass('playing').siblings().removeClass('playing');
+                                   audio.load($('a', next).attr('data-src'));
+                                   audio.play();
+                               }
+                           });
+                           // Load in the first track
+                           var audio = a[0];
+                           first = $('ol a').attr('data-src');
+                           $('ol li').first().addClass('playing');
+                           audio.load(first);
+                           // Load in a track on click
+                           $('ol li').click(function(e) {
+                               e.preventDefault();
+                               $(this).addClass('playing').siblings().removeClass('playing');
+                               audio.load($('a', this).attr('data-src'));
+                               audio.play();
+                           });
+                           // Keyboard shortcuts
+                           $(document).keydown(function(e) {
+                               var unicode = e.charCode ? e.charCode : e.keyCode;
+                               // right arrow
+                               if (unicode == 39) {
+                                   var next = $('li.playing').next();
+                                   if (!next.length) next = $('ol li').first();
+                                   next.click();
+                                   // back arrow
+                               } else if (unicode == 37) {
+                                   var prev = $('li.playing').prev();
+                                   if (!prev.length) prev = $('ol li').last();
+                                   prev.click();
+                                   // spacebar
+                               } else if (unicode == 32) {
+                                   audio.playPause();
+                               }
+                           })
+                       });
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
 
-  gtag('config', 'UA-120911953-1');
-</script>
+      <p>
+        Слушай в Chrome и Firefox (в Safari звук на вкладке). На планшете: дотронься до первой дорожки
+      </p>
 
+      <div style="visibility:hidden">
+        <audio autoplay="" preload=""></audio>
+      </div>
 
+      <div style="visibility:hidden">
+        <audio autoplay="" loop="" preload=""><source src="night.mp3" type="audio/mpeg"></audio>
+      </div>
+      <br>
 
-	<meta content="#ffffff" name="msapplication-TileColor">
-	<meta content="/ms-icon-144x144.png" name="msapplication-TileImage">
-	<meta content="#ffffff" name="theme-color"><!-- facebook -->
-	<meta content="Эфир выходных: Юпитер" property="og:title">
-	<meta content="jupiter.gif" property="og:image">
-	<meta content="Saturn-radio.ga" property="og:site_name">
-	<meta content="24/7-вещание по астрономии для детей и взрослых, с музыкальными паузами и без рекламы" property="og:description">
-	<style>
-	   @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
-	</style>
-	<link href="style-radio.css" rel="stylesheet" type="text/css"><!-- Yandex.Metrika counter -->
+      <ol>
+        <li>
+          <a data-src="/radio/boris-shtern-proryvy-1.mp3">30:00 &lt;�Исследование Вселенной: прорывы и тупики XXI века,
+          ч. I<br>
+          (Б. Штерн, 2017)</a>
+        </li>
 
-	<script type="text/javascript">
-	   (function (d, w, c) {
-	       (w[c] = w[c] || []).push(function() {
-	           try {
-	               w.yaCounter49190719 = new Ya.Metrika2({
-	                   id:49190719,
-	                   clickmap:true,
-	                   trackLinks:true,
-	                   accurateTrackBounce:true,
-	                   webvisor:true
-	               });
-	           } catch(e) { }
-	       });
+        <li>
+          <a data-src="/radio/boris-shtern-proryvy-2.mp3">30:00 &lt;�Исследование Вселенной: прорывы и тупики XXI века,
+          ч. II<br>
+          (Б. Штерн, 2017)</a>
+        </li>
 
-	       var n = d.getElementsByTagName("script")[0],
-	           s = d.createElement("script"),
-	           f = function () { n.parentNode.insertBefore(s, n); };
-	       s.type = "text/javascript";
-	       s.async = true;
-	       s.src = "https://mc.yandex.ru/metrika/tag.js";
+        <li>
+          <a data-src="/radio/boris-shtern-proryvy-3.mp3">30:00 &lt;�Исследование Вселенной: прорывы и тупики XXI века,
+          ч. III<br>
+          (Б. Штерн, 2017)</a>
+        </li>
 
-	       if (w.opera == "[object Opera]") {
-	           d.addEventListener("DOMContentLoaded", f, false);
-	       } else { f(); }
-	   })(document, window, "yandex_metrika_callbacks2");
-	</script><noscript>
-	<div><img alt="" src="https://mc.yandex.ru/watch/49190719" style="position:absolute; left:-9999px;"></div></noscript><!-- /Yandex.Metrika counter -->
+        <li>
+          <a data-src="/radio/boris-shtern-proryvy-4.mp3">30:00 &lt;�Исследование Вселенной: прорывы и тупики XXI века,
+          ч. IV<br>
+          (Б. Штерн, 2017)</a>
+        </li>
 
-	<script src="/audio/jquery.js">
-	</script>
-	<script src="/audiojs/audio.js">
-	</script>
-	<script>
-	       $(function() {
-	           // Setup the player to autoplay the next track
-	           var a = audiojs.createAll({
-	               trackEnded: function() {
-	                   var next = $('ol li.playing').next();
-	                   if (!next.length) next = $('ol li').first();
-	                   next.addClass('playing').siblings().removeClass('playing');
-	                   audio.load($('a', next).attr('data-src'));
-	                   audio.play();
-	               }
-	           });
-	           // Load in the first track
-	           var audio = a[0];
-	           first = $('ol a').attr('data-src');
-	           $('ol li').first().addClass('playing');
-	           audio.load(first);
-	           // Load in a track on click
-	           $('ol li').click(function(e) {
-	               e.preventDefault();
-	               $(this).addClass('playing').siblings().removeClass('playing');
-	               audio.load($('a', this).attr('data-src'));
-	               audio.play();
-	           });
-	           // Keyboard shortcuts
-	           $(document).keydown(function(e) {
-	               var unicode = e.charCode ? e.charCode : e.keyCode;
-	               // right arrow
-	               if (unicode == 39) {
-	                   var next = $('li.playing').next();
-	                   if (!next.length) next = $('ol li').first();
-	                   next.click();
-	                   // back arrow
-	               } else if (unicode == 37) {
-	                   var prev = $('li.playing').prev();
-	                   if (!prev.length) prev = $('ol li').last();
-	                   prev.click();
-	                   // spacebar
-	               } else if (unicode == 32) {
-	                   audio.playPause();
-	               }
-	           })
-	       });
-	</script>
-</head>
-<body>
-	<div id="wrapper">
+        <li>
+          <a data-src="/radio/boris-shtern-proryvy-1.mp3">04:00 &lt;�Исследование Вселенной: прорывы и тупики XXI века,
+          ч. V<br>
+          (Б. Штерн, 2017)</a>
+        </li>
 
-		<br>
-			<br>
-				<br>
-					<br>
-						<br>
-						<br>
-						<br>
-						<br>
-						<br>
+        <li>
+          <a data-src="/radio/upiter-weekend-andrei-dei.mp3">00:01 Эфир выходных: Юпитер<br>
+          (Андрей Дей, 2018)</a>
+        </li>
 
-		<p>Слушай в Chrome и Firefox (в Safari звук на вкладке). На планшете: дотронься до первой дорожки</p>
+        <li>
+          <a data-src="/radio/tedzhetova.mp3">05:33 Юпитер<br>
+          (Теджетова, 2013)</a>
+        </li>
 
-		<div id="sphere" class="img-sphere" ondblclick="window.open(&#39;https://www.facebook.com/groups/saturn.radio/ok&#39;);">
+        <li>
+          <a data-src="/radio/sistema-upitera-titov-2015.mp3">12:03 Система Юпитера<br>
+          (Титов, ПостНаука, 2015)</a>
+        </li>
 
-<img title="Double Click" src="./pickable-files/sphere.gif" alt="Это можно двигать мышью" width="220" height="150"></div>
+        <li>
+          <a data-src="/radio/planety-giganty-upiter-rodin-2017-1.mp3">24:41 Газовые планеты-гиганты. Юпитер, ч. I<br>
+          (Родин, Master Paul, 2017)</a>
+        </li>
 
-<div id="line" class="img-line" ondblclick="window.open(&#39;https://www.facebook.com/groups/saturn.radio/ok&#39;);">
-<img title="Double Click" src="./pickable-files/line.gif" alt="Это можно двигать мышью" width="342" height="345"></div>
+        <li>
+          <a data-src="/radio/planety-giganty-upiter-rodin-2017-2.mp3">24:41 Газовые планеты-гиганты. Юпитер, ч. II<br>
+          (Родин, Master Paul, 2017)</a>
+        </li>
 
-<div id="triangle" class="img-triangle" ondblclick="window.open(&#39;https://www.facebook.com/groups/saturn.radio/ok&#39;);">
+        <li>
+          <a data-src="/radio/planety-giganty-upiter-rodin-2017-3.mp3">24:40 Газовые планеты-гиганты. Юпитер, ч.
+          III<br>
+          (Родин, Master Paul, 2017)</a>
+        </li>
 
-<img title="Double Click" src="./pickable-files/triangle.gif" alt="Это можно двигать мышью" width="233" height="207"></div>
+        <li>
+          <a data-src="/radio/upiter-unona-ivantsov-2017.mp3">31:22 Исследование Юпитера, зонд «Юнона»<br>
+          (Иванцов, Синус, 2017)</a>
+        </li>
 
-	<div id="saturn" class="img-saturn" ondblclick="window.open(&#39;https://www.facebook.com/groups/saturn.radio/ok&#39;);">
+        <li>
+          <a data-src="/radio/sputniki-upitera-busarev-2016.mp3">14:15 Спутники Юпитера<br>
+          (Бусарев, ПостНаука, 2016)</a>
+        </li>
 
-<img title="Double Click" src="./pickable-files/saturn.gif" alt="Это можно двигать мышью" width="233" height="207"></div>
+        <li>
+          <a data-src="/radio/zond-unona-2016.mp3">11:31 Зонд Юнона - миссия к Юпитеру<br>
+          (Сурдин, Sinus, 2016)</a>
+        </li>
 
+        <li>
+          <a data-src="/radio/urok-astronomii.mp3">18:52 Урок астрономии<br>
+          (Райтбурт, Отечественная Документалистика, 1974)</a>
+        </li>
 
-  <script>
-    var _gaq=[['_setAccount','UA-16561759-5'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script>
+        <li>
+          <a data-src="/radio/ 2018_06_22_icast_bonus_track_mixdown.mp3">28:53 Бонус трек: Космический Укроп или обзор
+          книги астронавта Скотта Келли про год в космосе<br>
+          (Иммигранткаст, 2018)</a>
+        </li>
 
-<br>
-<ol>
-	<li>
-		<a data-src="/radio/boris-shtern-proryvy-1.mp3">30:00 <Исследование Вселенной: прорывы и тупики XXI века, ч. I<br>(Б. Штерн, 2017)</a>
-	</li>
-	<li>
-		<a data-src="/radio/boris-shtern-proryvy-2.mp3">30:00 <Исследование Вселенной: прорывы и тупики XXI века, ч. II<br>(Б. Штерн, 2017)</a>
-	</li>
-	<li>
-		<a data-src="/radio/boris-shtern-proryvy-3.mp3">30:00 <Исследование Вселенной: прорывы и тупики XXI века, ч. III<br>(Б. Штерн, 2017)</a>
-	</li>
-	<li>
-		<a data-src="/radio/boris-shtern-proryvy-4.mp3">30:00 <Исследование Вселенной: прорывы и тупики XXI века, ч. IV<br>(Б. Штерн, 2017)</a>
-	</li>
-	<li>
-		<a data-src="/radio/boris-shtern-proryvy-1.mp3">04:00 <Исследование Вселенной: прорывы и тупики XXI века, ч. V<br>(Б. Штерн, 2017)</a>
-	</li>
-	<li>
-		<a data-src="/radio/upiter-weekend-andrei-dei.mp3">00:01 Эфир выходных: Юпитер<br>(Андрей Дей, 2018)</a>
-	</li>
-			<li>
-				<a data-src="/radio/tedzhetova.mp3">05:33 Юпитер<br>(Теджетова, 2013)</a>
-			</li>
-			<li>
-				<a data-src="/radio/sistema-upitera-titov-2015.mp3">12:03 Система Юпитера<br>(Титов, ПостНаука, 2015)</a>
-			</li>
-			<li>
-				<a data-src="/radio/planety-giganty-upiter-rodin-2017-1.mp3">24:41 Газовые планеты-гиганты. Юпитер, ч. I<br>(Родин, Master Paul, 2017)</a>
-			</li>
-			<li>
-				<a data-src="/radio/planety-giganty-upiter-rodin-2017-2.mp3">24:41 Газовые планеты-гиганты. Юпитер, ч. II<br>(Родин, Master Paul, 2017)</a>
-			</li>
-			<li>
-				<a data-src="/radio/planety-giganty-upiter-rodin-2017-3.mp3">24:40 Газовые планеты-гиганты. Юпитер, ч. III<br>(Родин, Master Paul, 2017)</a>
-			</li>
-			<li>
-				<a data-src="/radio/upiter-unona-ivantsov-2017.mp3">31:22 Исследование Юпитера, зонд «Юнона»<br>(Иванцов, Синус, 2017)</a>
-			</li>
-			<li>
-				<a data-src="/radio/sputniki-upitera-busarev-2016.mp3">14:15 Спутники Юпитера<br>(Бусарев, ПостНаука, 2016)</a>
-			</li>
-			<li>
-				<a data-src="/radio/zond-unona-2016.mp3">11:31 Зонд Юнона - миссия к Юпитеру <br>(Сурдин, Sinus, 2016)</a>
-			</li>
-			<li>
-				<a data-src="/radio/urok-astronomii.mp3">18:52 Урок астрономии <br>(Райтбурт, Отечественная Документалистика, 1974)</a>
-			</li>
+        <li>
+          <a data-src="/radio/15-06-18-1-1.mp3">35:47 Венера, ч. I<br>
+          (Ксанфомалити, МП, 2013)</a>
+        </li>
 
+        <li>
+          <a data-src="/radio/15-06-18-1-2.mp3">35:47 Венера, ч. II<br>
+          (Ксанфомалити, МП, 2013)</a>
+        </li>
 
+        <li>
+          <a data-src="/radio/15-06-18-1.mp3">36:14 Человек на Марсе, ч. I<br>
+          (Сурдин, МГУ, 2017)</a>
+        </li>
 
-			<li>
-				<a data-src="/radio/			2018_06_22_icast_bonus_track_mixdown.mp3">28:53 Бонус трек: Космический Укроп или обзор книги астронавта Скотта Келли про год в космосе<br>(Иммигранткаст, 2018)</a>
-			</li>
-			<li>
-				<a data-src="/radio/15-06-18-1-1.mp3">35:47 Венера, ч. I<br>(Ксанфомалити, МП, 2013)</a>
-			</li>
-			<li>
-				<a data-src="/radio/15-06-18-1-2.mp3">35:47 Венера, ч. II<br>(Ксанфомалити, МП, 2013)</a>
-			</li>
-			<li>
-				<a data-src="/radio/15-06-18-1.mp3">36:14 Человек на Марсе, ч. I<br>(Сурдин, МГУ, 2017)</a>
-			</li>
-			<li>
-				<a data-src="/radio/15-06-18-2.mp3">36:14 Человек на Марсе, ч. II<br>(Сурдин, МГУ, 2017)</a>
-			</li>
-			<li>
-				<a data-src="/radio/10-06-18-1-1.mp3">36:55 Марс, ч. I<br>(Сурдин, МГУ, 2017)</a>
-			</li>
-      <li>
-				<a data-src="/radio/10-06-18-1-2.mp3">36:55 Марс, ч. II<br>(Сурдин, МГУ, 2017)</a>
-			</li>
-			<li>
-				<a data-src="/radio/10-06-18-1.mp3">42:25 Солнечная система, ч. I<br>(Сурдин, МГУ, 2017)</a>
-			</li>
-      <li>
-				<a data-src="/radio/10-06-18-2.mp3">42:25 Солнечная система, ч. II<br>(Сурдин, МГУ, 2017)</a>
-			</li>
-      <li>
-				<a data-src="/radio/09-06-18-1.mp3">47:25 Неоптические приборы, ч. I<br>(Сурдин, МГУ, 2017)</a>
-			</li>
-			<li>
-				<a data-src="/radio/09-06-18-2.mp3">47:25 Неоптические приборы ч. II<br>(Сурдин, МГУ, 2017)</a>
-			</li>
-      <li>
-				<a data-src="/radio/08-06-18-1.mp3">38:00 Оптические телескопы ч. I<br>(Сурдин, МГУ, 2017)</a>
-			</li>
-			<li>
-				<a data-src="/radio/08-06-18-2.mp3">38:00 Оптические телескопы ч. II<br>(Сурдин, МГУ, 2017)</a>
-			</li>
-			<li>
-				<a data-src="/radio/07-06-18-1.mp3">Наука астрономия ч. I<br>(Сурдин, МГУ, 2017)(47:45)</a>
-			</li>
-			<li>
-				<a data-src="/radio/07-06-18-2.mp3">Наука астрономия ч. II<br>(Сурдин, МГУ, 2017)(47:45)</a>
-			</li>
-			<li>
-				<a data-src="/radio/11-06-18-1.mp3">33:02 Астрофизические итоги, ч. I<br>(Попов, Архэ, 2017)</a>
-			</li>
-      <li>
-				<a data-src="/radio/11-06-18-2.mp3">33:02 Астрофизические итоги, ч. II<br>(Попов, Архэ, 2017)</a>
-			</li>
-      <li>
-				<a data-src="/radio/11-06-18-3.mp3">33:02 Астрофизические итоги, ч. III<br>(Попов, Архэ, 2017)</a>
-			</li>
-      <li>
-				<a data-src="/radio/11-06-18-4.mp3">33:01 Астрофизические итоги, ч. IV<br>(Попов, Архэ, 2017)</a>
-			</li>
-		</ol>
-		<br>
-		<p>Сатурн-радио передаёт фв пробном режиме. Пауза и старт (пробел), назад и вперед (стрелки).</p> <p>Пожелания и записи присылайте в группу <a href="https://www.facebook.com/groups/saturn.radio/">facebook.com/groups/saturn.radio</a></p>
-<br>
-		<p>2018 © Сатурн-радио</p>
-		<div style="visibility:hidden">
-			<audio autoplay="" preload=""></audio>
-		</div>
-		<div style="visibility:hidden">
-		<audio nocontrols autoplay loop preload>
-			<source src="night.mp3" volume="1" type="audio/mpeg">
-		</audio>
-		</div>
-	</div>
-	</div>
-</body>
+        <li>
+          <a data-src="/radio/15-06-18-2.mp3">36:14 Человек на Марсе, ч. II<br>
+          (Сурдин, МГУ, 2017)</a>
+        </li>
 
-<!-- pickable -->
+        <li>
+          <a data-src="/radio/10-06-18-1-1.mp3">36:55 Марс, ч. I<br>
+          (Сурдин, МГУ, 2017)</a>
+        </li>
 
-<link href="./pickable-files/css.css" rel="stylesheet" type="text/css">
-<script src="./pickable-files/ga.js"></script><script type="text/javascript" src="./pickable-files/AC_RunActiveContent.js"></script>
-<script type="text/javascript" src="./pickable-files/x_core.js"></script>
-<script type="text/javascript" src="./pickable-files/x_event.js"></script>
-<script type="text/javascript" src="./pickable-files/xenabledrag.js"></script>
-<script type="text/javascript" src="./pickable-files/xenabledrag2.js"></script>
+        <li>
+          <a data-src="/radio/10-06-18-1-2.mp3">36:55 Марс, ч. II<br>
+          (Сурдин, МГУ, 2017)</a>
+        </li>
 
+        <li>
+          <a data-src="/radio/10-06-18-1.mp3">42:25 Солнечная система, ч. I<br>
+          (Сурдин, МГУ, 2017)</a>
+        </li>
 
-<script type="text/javascript">
-window.onload = function()
-{
-  xEnableDrag2('sphere');
-  xEnableDrag2('line');
-  xEnableDrag2('triangle');
-	xEnableDrag2('saturn');
-}
-</script>
+        <li>
+          <a data-src="/radio/10-06-18-2.mp3">42:25 Солнечная система, ч. II<br>
+          (Сурдин, МГУ, 2017)</a>
+        </li>
+
+        <li>
+          <a data-src="/radio/09-06-18-1.mp3">47:25 Неоптические приборы, ч. I<br>
+          (Сурдин, МГУ, 2017)</a>
+        </li>
+
+        <li>
+          <a data-src="/radio/09-06-18-2.mp3">47:25 Неоптические приборы ч. II<br>
+          (Сурдин, МГУ, 2017)</a>
+        </li>
+
+        <li>
+          <a data-src="/radio/08-06-18-1.mp3">38:00 Оптические телескопы ч. I<br>
+          (Сурдин, МГУ, 2017)</a>
+        </li>
+
+        <li>
+          <a data-src="/radio/08-06-18-2.mp3">38:00 Оптические телескопы ч. II<br>
+          (Сурдин, МГУ, 2017)</a>
+        </li>
+
+        <li>
+          <a data-src="/radio/07-06-18-1.mp3">Наука астрономия ч. I<br>
+          (Сурдин, МГУ, 2017)(47:45)</a>
+        </li>
+
+        <li>
+          <a data-src="/radio/07-06-18-2.mp3">Наука астрономия ч. II<br>
+          (Сурдин, МГУ, 2017)(47:45)</a>
+        </li>
+
+        <li>
+          <a data-src="/radio/11-06-18-1.mp3">33:02 Астрофизические итоги, ч. I<br>
+          (Попов, Архэ, 2017)</a>
+        </li>
+
+        <li>
+          <a data-src="/radio/11-06-18-2.mp3">33:02 Астрофизические итоги, ч. II<br>
+          (Попов, Архэ, 2017)</a>
+        </li>
+
+        <li>
+          <a data-src="/radio/11-06-18-3.mp3">33:02 Астрофизические итоги, ч. III<br>
+          (Попов, Архэ, 2017)</a>
+        </li>
+
+        <li>
+          <a data-src="/radio/11-06-18-4.mp3">33:01 Астрофизические итоги, ч. IV<br>
+          (Попов, Архэ, 2017)</a>
+        </li>
+      </ol>
+      <br>
+
+      <p>
+        Сатурн-радио передаёт фв пробном режиме. Пауза и старт (пробел), назад и вперед (стрелки).
+      </p>
+
+      <p>
+        Пожелания и записи присылайте в группу <a href=
+        "https://www.facebook.com/groups/saturn.radio/">facebook.com/groups/saturn.radio</a>
+      </p>
+      <br>
+
+      <p>
+        2018 © Сатурн-радио
+      </p>
+    </div>
+    <!-- pickable -->
+    <link href="./pickable-files/css.css" rel="stylesheet" type="text/css">
+    <script src="./pickable-files/ga.js">
+    </script>
+    <script src="./pickable-files/AC_RunActiveContent.js" type="text/javascript">
+    </script>
+    <script src="./pickable-files/x_core.js" type="text/javascript">
+    </script>
+    <script src="./pickable-files/x_event.js" type="text/javascript">
+    </script>
+    <script src="./pickable-files/xenabledrag.js" type="text/javascript">
+    </script>
+    <script src="./pickable-files/xenabledrag2.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+              window.onload = function()
+              {
+              xEnableDrag2('sphere');
+              xEnableDrag2('line');
+              xEnableDrag2('triangle');
+                xEnableDrag2('saturn');
+              }
+    </script>
+    <div class="img-sphere" id="sphere" ondblclick=
+    "window.open(&#39;https://www.facebook.com/groups/saturn.radio/ok&#39;);">
+      <img alt="Это можно двигать мышью" height="auto" src="./pickable-files/sphere.gif" title="Double Click" width=
+      "100">
+    </div>
+
+    <div class="img-line" id="line" ondblclick=
+    "window.open(&#39;https://www.facebook.com/groups/saturn.radio/ok&#39;);">
+      <img alt="Это можно двигать мышью" height="auto" src="./pickable-files/line.gif" title="Double Click" width=
+      "100">
+    </div>
+
+    <div class="img-triangle" id="triangle" ondblclick=
+    "window.open(&#39;https://www.facebook.com/groups/saturn.radio/ok&#39;);">
+      <img alt="Это можно двигать мышью" height="auto" src="./pickable-files/triangle.gif" title="Double Click" width=
+      "100">
+    </div>
+
+    <div class="img-saturn" id="saturn" ondblclick=
+    "window.open(&#39;https://www.facebook.com/groups/saturn.radio/ok&#39;);">
+      <img alt="Это можно двигать мышью" height="auto" src="./pickable-files/saturn.gif" title="Double Click" width=
+      "100">
+    </div>
+    <script>
+                var _gaq=[['_setAccount','UA-16561759-5'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script><!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120911953-1">
+    </script>
+    <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-120911953-1');
+    </script>
+    <meta content="#ffffff" name="msapplication-TileColor">
+    <meta content="/ms-icon-144x144.png" name="msapplication-TileImage">
+    <meta content="#ffffff" name="theme-color"><!-- facebook -->
+    <meta content="Исследование Вселенной: прорывы и тупики XXI века" property="og:title">
+    <meta content="jupiter.gif" property="og:image">
+    <meta content="Saturn-radio.ga" property="og:site_name">
+    <meta content="24/7-вещание по астрономии для детей и взрослых" property="og:description">
+    <script type="text/javascript">
+                   (function (d, w, c) {
+                       (w[c] = w[c] || []).push(function() {
+                           try {
+                               w.yaCounter49190719 = new Ya.Metrika2({
+                                   id:49190719,
+                                   clickmap:true,
+                                   trackLinks:true,
+                                   accurateTrackBounce:true,
+                                   webvisor:true
+                               });
+                           } catch(e) { }
+                       });
+
+                       var n = d.getElementsByTagName("script")[0],
+                           s = d.createElement("script"),
+                           f = function () { n.parentNode.insertBefore(s, n); };
+                       s.type = "text/javascript";
+                       s.async = true;
+                       s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+                       if (w.opera == "[object Opera]") {
+                           d.addEventListener("DOMContentLoaded", f, false);
+                       } else { f(); }
+                   })(document, window, "yandex_metrika_callbacks2");
+    </script> <noscript>
+    <div>
+      <img alt="" src="https://mc.yandex.ru/watch/49190719" style="position:absolute; left:-9999px;">
+    </div></noscript><!-- /Yandex.Metrika counter -->
+  </body>
 </html>
