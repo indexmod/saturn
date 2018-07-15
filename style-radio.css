@@ -2,6 +2,7 @@ body {
     background-color: white;
     font-family:  'Arial', cursive;
     font-size: 15px;
+    font-weight: 900;
     color: green;
 }
 
@@ -49,4 +50,10 @@ li.playing {
     list-style-type: none;
     text-decoration: underline;
 
+}
+
+li.playing a {
+    color: yellow;
+    list-style-type: none;
+    text-decoration: underline;
 }
