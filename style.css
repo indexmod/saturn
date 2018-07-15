@@ -1,11 +1,11 @@
 body {
-    background-color: white;
+    background-color: skyblue;
     font-family:  'Helvetica Neue';
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 900;
-    color: green;
+    color: black;
     text-transform: uppercase;
-    line-height: 2em;
+    line-height: 0.9em;
 }
 
 #wrapper {
@@ -23,7 +23,7 @@ a {
     text-decoration: none;
     line-height: 2em;
     list-style-type: none;
-    color: green;
+    color: black;
 
 }
 
@@ -39,22 +39,21 @@ ol li {
 
 ol li a {
     display: block;
-    line-height: 2em;
-    padding: 0px 0px 0px 20px;
+    padding: 5px 5px 5px 5px;
     list-style-type: none;
 
 }
 
 li.playing {
     line-height: 2em;
-    color: black;
+    color: white;
     list-style-type: none;
-    text-decoration: none;
+    text-decoration: blink;
 
 }
 
 li.playing a {
-    color: black;
+    color: white;
     list-style-type: none;
-    text-decoration: none;
+    text-decoration: blink;
 }
