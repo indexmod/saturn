@@ -2,31 +2,31 @@
 .img-sphere {
 	cursor:pointer;
 	position: absolute;
-	left: 700px;
-	top: 121px;
-	z-index:3
+	left: 400px;
+	top: 100px;
+	z-index:-1
 }
 
 .img-line {
 	cursor:pointer;
 	position: absolute;
-	left: 400px;
-	top: 20px;
-	z-index:4;
+	left: 300px;
+	top: 100px;
+	z-index:-1;
 }
 
 .img-triangle {
 	cursor:pointer;
 	position: absolute;
-	left: 300px;
-	top: 90px;
-	z-index:1
+	left: 200px;
+	top: 100px;
+	z-index:-1
 }
 
 .img-saturn {
 	cursor:pointer;
 	position: absolute;
-	left: 130px;
-	top: 80px;
-	z-index:0
+	left: 100px;
+	top: 100px;
+	z-index:-1
 }
