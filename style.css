@@ -1,7 +1,7 @@
 body {
     background-color: skyblue;
     font-family:  'Helvetica Neue';
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 900;
     color: black;
     text-transform: uppercase;
@@ -28,8 +28,8 @@ a {
 }
 
 ol li {
-    position: relative;
-    margin: 5px;
+    line-height: 0.9em
+    margin: 2px 2px 2px
     padding: 9px 2px 10px;
     cursor: pointer;
     line-height: 2em;
@@ -41,6 +41,7 @@ ol li a {
     display: block;
     padding: 5px 5px 5px 5px;
     list-style-type: none;
+    line-height: 0.9em
 
 }
 
@@ -49,6 +50,7 @@ li.playing {
     color: white;
     list-style-type: none;
     text-decoration: blink;
+    line-height: 0.9em
 
 }
 
@@ -56,4 +58,5 @@ li.playing a {
     color: white;
     list-style-type: none;
     text-decoration: blink;
+    line-height: 0.9em
 }
