@@ -1,17 +1,18 @@
 body {
-    background-color: white;
-    font-family:  'Helvetica Neue', cursive;
+    background-color: skyblue;
+    font-family:  'Helvetica Neue';
     font-size: 20px;
     font-weight: 900;
-    color: green;
+    color: black;
+    text-transform: uppercase;
+    line-height: 0.9em;
 }
 
 #wrapper {
-    width: 70%;
-    line-height: 2em;
-    min-width: 17px;
-    max-width: 800px;
-    margin: 0px auto;
+    width: 90%;
+    min-width: 90%;
+    max-width: 90%;
+    margin: 5px auto;
     padding: 1 1 1 1;
 
 }
@@ -21,8 +22,8 @@ a {
 
     text-decoration: none;
     line-height: 2em;
-    color: green;
     list-style-type: none;
+    color: black;
 
 }
 
@@ -38,22 +39,21 @@ ol li {
 
 ol li a {
     display: block;
-    line-height: 2em;
-    padding: 0px 0px 0px 20px;
+    padding: 5px 5px 5px 5px;
     list-style-type: none;
 
 }
 
 li.playing {
     line-height: 2em;
-    color: gold;
+    color: white;
     list-style-type: none;
-    text-decoration: underline;
+    text-decoration: blink;
 
 }
 
 li.playing a {
-    color: gold;
+    color: white;
     list-style-type: none;
-    text-decoration: underline;
+    text-decoration: blink;
 }
