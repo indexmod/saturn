@@ -42,7 +42,7 @@ ol li a {
 }
 
 li.playing {
-    color: pink;
+    color: orange;
     list-style-type: none;
     text-decoration: underline;
     line-height: 1.6em
