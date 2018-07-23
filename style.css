@@ -40,14 +40,14 @@ ol li a {
 }
 
 li.playing {
-    color: #C70039;
+    color: green;
     list-style-type: none;
     text-decoration: underline;
 
 }
 
 li.playing a {
-    color: #C70039;
+    color: green;
     list-style-type: none;
     text-decoration: underline;
 }
