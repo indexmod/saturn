@@ -14,8 +14,8 @@ body {
     min-width: 100px;
     max-width: 853px;
     margin: 0px auto;
-    padding: 1 1 1 1;
-    opacity: 0.9;
+    padding: 10 10 10 10;
+    opacity: 0.5;
 }
 
 a {
