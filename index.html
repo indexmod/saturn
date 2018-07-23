@@ -67,12 +67,19 @@
     </script>
   </head>
   <body>
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v3.0&appId=173711889938607&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     <div id="wrapper">
       <div style="visibility:hidden">
         <audio autoplay=""></audio>
       </div>
       <br>
-
       <ol>
           <p>
             1. Saturn-radio.ga (Сатурн-радио) передаёт в пробном режиме.<br> 2. Воспроизведение: пауза и старт (пробел).<br>3. Назад и вперед между передачами (стрелки влево и вправо).<br>4. В Safari включи значок звука на вкладке.<br>5. На планшете тапни по плейлисту.<br>6. Таким знаком <span style="color: green";><sup>𝄞</sup></span> помечены музыкальные паузы.<br>7. Пожелания <a href=
@@ -295,6 +302,8 @@
           </li>
 
           <hr>
+        
+        <div class="fb-like" data-href="https://saturn-radio.ga/" data-width="100" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 
           <p>
           Сатурн-радио, 2018 <span style="color: green";><sup>⦵</sup></span> Saturn-radio.ga
