@@ -57,3 +57,8 @@ li.playing a {
     line-height: 1.6em
         font-weight: 900;
 }
+
+img {
+    width: 100%;
+    height: auto;
+}
