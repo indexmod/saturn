@@ -2,7 +2,7 @@ body {
     background-color: white;
     font-family: 'Verdana', cursive;
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 100;
     color: black;
     line-height: 1.9em;
 }
@@ -18,7 +18,7 @@ body {
 }
 
 a {
-    font-weight: 700;
+    font-weight: 900;
     text-decoration: none;
     color: black;
 }
