@@ -29,6 +29,7 @@ ol li {
     cursor: pointer;
     list-style-type: none;
     line-height: 1.5em;
+    font-weight: 500;
 
 }
 
@@ -37,6 +38,7 @@ ol li a {
     padding: 5px 5px 5px 5px;
     list-style-type: none;
     line-height: 1.5em;
+    font-weight: 500;
 
 }
 
