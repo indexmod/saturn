@@ -4,7 +4,7 @@ body {
     font-size: 15px;
     font-weight: 100;
     color: black;
-    line-height: 1.9em;
+    line-height: 1em;
 }
 
 #wrapper {
@@ -18,7 +18,7 @@ body {
 }
 
 a {
-    font-weight: 900;
+    font-weight: 300;
     text-decoration: none;
     color: black;
 }
@@ -28,7 +28,7 @@ ol li {
     padding: 10px 10px 10px 10px;
     cursor: pointer;
     list-style-type: none;
-    line-height: 1.5em
+    line-height: 1em
 
 }
 
@@ -36,7 +36,7 @@ ol li a {
     display: block;
     padding: 5px 5px 5px 5px;
     list-style-type: none;
-    line-height: 1.5em
+    line-height: 1em
 
 }
 
@@ -44,7 +44,7 @@ li.playing {
     color: green;
     list-style-type: none;
     text-decoration: underline;
-    line-height: 1.5em
+    line-height: 1em
 
 }
 
@@ -52,7 +52,7 @@ li.playing a {
     color: green;
     list-style-type: none;
     text-decoration: underline;
-    line-height: 1.4em
+    line-height: 1em
 }
 
 img {
